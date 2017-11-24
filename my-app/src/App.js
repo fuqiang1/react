@@ -3,7 +3,7 @@ import About from './components/About';
 import Input from './components/Input';
 // import { Link } from 'react-router-dom'
 import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
 class App extends Component {
   render() {
     return (

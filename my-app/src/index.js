@@ -1,11 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import { BrowserRouter, Route } from 'react-router-dom'
-// import AboutContainer from './containers/aboutContainer'
-import AppContainer from './containers/appContainer'
-// import App from './App';
-// import About from './components/About';
-// import Input from './components/Input';
+import App from './router';
 import { Provider } from 'react-redux';
 import configureStore from './redux/configureStore';
 
@@ -15,7 +11,7 @@ const store = configureStore();
 // 也可以延迟加载这个配置）。
 const BasicExample = () => (
     <Provider store={store}>
-      <AppContainer/>
+      <App/>
     </Provider>
   )
 ReactDOM.render(<BasicExample/>, document.getElementById('root'));  
