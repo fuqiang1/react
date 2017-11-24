@@ -5,7 +5,6 @@ class Input extends React.Component {
     this.setState({ // add an array of strings to state.
       list: ['thing1', 'thing2', 'thing3']
     })
-    console.log(this)
   };
   render () {
     return (

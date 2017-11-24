@@ -1,22 +1,37 @@
 import React from 'react';
-import List from './List.js'
-import { Link } from 'react-router-dom'
-class About extends React.Component {
-  componentWillMount(){ // run before the render method
-    this.setState({ // add an array of strings to state.
-      list: ['thing1', 'thing2', 'thing3']
-    })
-    console.log(this)
-  };
-  render () {
-    return (
+import { connect } from 'react-redux'
+// import List from './List.js'
+// import { Link } from 'react-router-dom'
+const About = (props) => {
+  return (
+    <div className="m-card">
       <div>
-        <List listItems={this.state.list} />
-        <div>
-            <Link to="/">I'm about！！！</Link>
-        </div>
+        姓名：{props.name}
       </div>
-    )
+      <div>
+        照片：{props.age}
+      </div>
+      <button onClick={props.show}>
+        显示
+      </button>
+    </div>
+  )
+}
+function mapStateToProps(state) {
+  var info = state.about
+  return {
+    name: info.name,
+    age: info.age
   }
 }
-export default About;
+function mapDispatchToProps(dispatch) {
+  return {
+    show () {
+      dispatch ({
+        type: 'SHOW_NAME'
+      })
+    }
+  } 
+}
+export default connect(mapStateToProps, mapDispatchToProps)(About)
+// export default About;
